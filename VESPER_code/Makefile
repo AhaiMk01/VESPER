@@ -12,6 +12,8 @@ OPT = -O3 -msse4.2 -msse -msse2 -msse3 -mmmx -ftree-vectorize -ftree-vectorizer-
 $(PG) : main.c $(OBJECTS) $(HEADER) $(COM)
 	$(CC) -o $(PG) main.c $(OBJECTS) -lm $(OPT) -lfftw3_threads -lfftw3f
 
+clean:
+	rm -f $(PG) $(OBJECTS)
 
 chkcmdline.o : chkcmdline.c $(HEADER)
 	$(CC) -O3 -c chkcmdline.c
